@@ -1,1 +1,25 @@
 
+# Performance Troubleshooting
+
+
+## Top processos
+htop
+pidstat 1
+
+
+## Syscalls
+strace -p PID
+
+
+## Disco
+iotop -oPa
+iostat -xz 1
+
+
+## Memória
+free -h
+vmstat 1
+
+
+## Identificar processo causando load
+ps -eo pid,ppid,cmd,%cpu,%mem --sort=-%cpu | head
